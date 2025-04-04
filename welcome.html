@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department Welcome</title>
+    <script>
+        // Function to get the department from the query string
+        function getDepartment() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const dept = urlParams.get('dept');
+            const messageElement = document.getElementById('message');
+            if (dept) {
+                messageElement.innerHTML = `Welcome to ${dept}`;
+            } else {
+                messageElement.innerHTML = 'Please select a department';
+            }
+        }
+
+        window.onload = getDepartment;
+    </script>
+</head>
+<body>
+    <h1 id="message">Please select a department</h1>
+</body>
+</html>
+
